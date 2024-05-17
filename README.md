@@ -114,19 +114,19 @@ Accuracy of both setups in determining the distance to objects.
 1. Apply rectification maps to Left-Right image pairs.
 2. Find and optimize the four corners of the ArUco markers.
 3. Calculate the pixel disparity and determine the distance using:
-   \[
+   $$\[
    Z = \frac{T \cdot f \cdot \text{Resolution}}{\text{Pixel Disparity} \cdot \text{Sensor Width}}
-   \]
+   \]$$
 
 ##### Optical Flow Camera
 1. Split video frames into individual images.
 2. Apply camera calibration matrices to undistort each frame.
 3. Find and optimize the four corners of the ArUco markers.
 4. Calculate the distance using:
-   \[
+   $$\[
    Z = \frac{\text{Velocity} \cdot \text{Camera Constant} \cdot \text{fps}}{\text{Pixel Disparity}}
-   \]
-   Where Camera Constant = \(\frac{f \cdot \text{Resolution}}{\text{Sensor Width}}\).
+   \]$$
+   Where Camera Constant = $\(\frac{f \cdot \text{Resolution}}{\text{Sensor Width}}\)$.
 
 ### Data Analysis
 Calculate the difference between the calculated distance and the actual distance to each target. Calculate the mean, standard deviation, minimum, and maximum errors for each target.
@@ -134,22 +134,6 @@ Calculate the difference between the calculated distance and the actual distance
 ## Results
 
 ### Stereo Camera Results
-| Target | Mean Error (mm) | StdDev (mm) | Min Error (mm) | Max Error (mm) |
-|--------|-----------------|-------------|----------------|----------------|
-| Target 1 | ... | ... | ... | ... |
-| ... | ... | ... | ... | ... |
-
-### Sparse Optical Flow Camera Results
-| Velocity (mm/s) | Mean Error (mm) | StdDev (mm) | Min Error (mm) | Max Error (mm) |
-|-----------------|-----------------|-------------|----------------|----------------|
-| 15 | ... | ... | ... | ... |
-| ... | ... | ... | ... | ... |
-
-### Dense Optical Flow Camera Results
-| Target | Stereo Mean Error (mm) | Optical Flow Mean Error (mm) | Stereo StdDev (mm) | Optical Flow StdDev (mm) |
-|--------|------------------------|-----------------------------|-------------------|--------------------------|
-| Target 1 | ... | ... | ... | ... |
-| ... | ... | ... | ... | ... |
 
 ![Error Comparison](URL_to_Error_Comparison_Image)
 
